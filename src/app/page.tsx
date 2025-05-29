@@ -6,7 +6,7 @@ import { useState } from 'react';
 
 
 export default function Home() {
-  const section2Text = "Stop thinking. Just chill. In a world that never slows down, it's easy to forget that rest isn't a reward—it's a right. You weren't made to rush from task to task, always poisoning, always pushing. Life is softer than you think. And it gets even softer when you stop chasing and start breathing.";
+  const section2Text = "Stop thinking. Just chill.<br />In a world that never slows down, it's easy to forget that rest isn't a reward—it's a right.<br />You weren't made to rush from task to task, always planning, always pushing.<br />Life is softer than you think.<br />And it gets even better when you stop chasing and start breathing.";
   const section3Text1 = "Let the noise fade. Let your shoulders drop. Let comfort wrap around you like a favorite memory.";
   const section3Text2 = "Chillr is here. With you, beside you, beneath you—supporting the life you're meant to live. Not the rushed one. The real one. The relaxed one.";
   const footerTopLeftText = "So sit back. Chill. And enjoy the life you\'re supposed to have.";
@@ -36,11 +36,11 @@ export default function Home() {
           />
         </Link>
         <div className="hidden md:flex items-center space-x-6">
-          <Link href="#about" className="text-yellow-400 hover:text-yellow-300 transition-colors">about</Link>
-          <Link href="#product" className="text-yellow-400 hover:text-yellow-300 transition-colors">product</Link>
-          <Link href="#contact" className="text-yellow-400 hover:text-yellow-300 transition-colors">contact</Link>
+          <Link href="#about" className="text-yellow-300 hover:text-yellow-400 transition-colors">about</Link>
+          <Link href="#product" className="text-yellow-300 hover:text-yellow-400 transition-colors">product</Link>
+          <Link href="#contact" className="text-yellow-300 hover:text-yellow-400 transition-colors">contact</Link>
         </div>
-        <button className="border border-yellow-400 text-yellow-400 px-5 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition-colors text-sm font-medium">
+        <button className="border border-yellow-300 text-yellow-300 px-5 py-2 rounded-full hover:bg-yellow-400 hover:text-black transition-colors text-sm font-medium">
           Chillr Together
         </button>
         <div className="md:hidden">
@@ -55,27 +55,27 @@ export default function Home() {
           style={{ width: '100%', height: 'calc(100% - 4rem)', position: 'absolute', top: '4rem', left: 0 }}
         />
         <div className="absolute inset-x-0 top-1/3 flex flex-col items-center justify-center text-center p-4 pointer-events-none">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-yellow-400 drop-shadow-md">Stop thinking. Just chill.</h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-yellow-400 mt-4 drop-shadow-md">Life is softer than you think.</p>
+          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-yellow-300 drop-shadow-md">Stop thinking. Just chill.</h1>
+          <p className="text-lg sm:text-xl md:text-2xl text-yellow-300 mt-4 drop-shadow-md">Life is softer than you think.</p>
         </div>
       </section>
 
       {/* Section 2 (Philosophy Text + Image) */}
       <section id="about" className="py-12 sm:py-16 px-6 sm:px-8 md:px-16 lg:px-24 grid md:grid-cols-2 gap-10 md:gap-12 items-center bg-white text-black">
-        <div className="prose prose-lg max-w-none text-gray-700">
-          <h2 className="text-3xl sm:text-4xl font-semibold mb-6 text-black !text-black">The Philosophy</h2>
-          <p className="leading-relaxed">
-            {section2Text}
-          </p>
+        <div className="prose prose-lg max-w-[140px] text-gray-700 md:ml-32 text-sm ">
+          <p className="leading-[1.2]" dangerouslySetInnerHTML={{ __html: section2Text }} />
         </div>
-        <div className="relative w-full h-72 sm:h-96 md:h-auto md:aspect-[4/3] rounded-lg overflow-hidden shadow-xl">
-          <Image
-            src="/sec2_img.jpg"
-            alt="Chillr chair in urban setting"
-            layout="fill"
-            objectFit="cover"
-            priority
-          />
+        <div className="relative w-full h-72 sm:h-96 md:h-[940px] md:aspect-[4/3] overflow-hidden">
+          <video
+            src="/sec2_video.mp4"
+            className="absolute top-1/2 left-0 w-full -translate-y-1/2"
+            autoPlay
+            loop
+            muted
+            playsInline
+          >
+            Your browser does not support the video tag.
+          </video>
         </div>
       </section>
 
@@ -98,16 +98,16 @@ export default function Home() {
           </div>
         </div>
         <div 
-          className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 items-center justify-items-center pt-0 md:pt-8"
+          className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 items-center justify-items-center pt-0 md:pt-8"
           onMouseLeave={() => setActiveLeftImageSec3("/sec3_img.jpg")}
         >
           {chairsDataSec3.map((chair) => (
             <div 
               key={chair.number} 
-              className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 p-4 bg-slate-50 rounded-xl shadow-lg cursor-pointer transform hover:scale-105 transition-transform duration-200"
+              className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 p-4 cursor-pointer transform hover:scale-105 transition-transform duration-200"
               onMouseEnter={() => setActiveLeftImageSec3(chair.detailImageSrc)}
             >
-              <span className="absolute top-2 left-2 text-xs sm:text-sm font-semibold text-black bg-white/50 backdrop-blur-sm px-1.5 py-0.5 rounded">
+              <span className="absolute top-0 left-0 text-xs sm:text-sm font-semibold text-white bg-black backdrop-blur-sm px-1.5 py-0.5 rounded-full w-6 h-6 flex items-center justify-center">
                 {chair.number}
               </span>
               <Image
@@ -139,7 +139,7 @@ export default function Home() {
       {/* Footer (Spline) */}
       <footer id="contact" className="h-[50vh] min-h-[350px] w-full relative bg-black">
         <div className="absolute top-8 left-6 sm:left-8 md:left-16 lg:left-24 z-10 pointer-events-none">
-          <p className="text-lg sm:text-xl text-gray-200 max-w-xs leading-relaxed">{footerTopLeftText}</p>
+          <p className="text-lg sm:text-xl text-yellow-300 max-w-xs leading-relaxed">{footerTopLeftText}</p>
         </div>
         <Spline
           scene="https://prod.spline.design/82IsOFsX56iulNIm/scene.splinecode"
