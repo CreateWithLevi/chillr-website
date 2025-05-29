@@ -19,7 +19,7 @@ export default function Home() {
             alt="Chillr Logo"
             width={100}
             height={24}
-            className="filter invert"
+            className="filter"
             priority
           />
         </Link>
@@ -85,17 +85,20 @@ export default function Home() {
         </div>
         <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 sm:gap-8 items-center justify-items-center pt-0 md:pt-8">
           {[
-            { src: "/sec3_chair1.svg", alt: "Chillr chair sketch 1" },
-            { src: "/sec3_chair2.svg", alt: "Chillr chair sketch 2" },
-            { src: "/sec3_chair3.svg", alt: "Chillr chair sketch 3" },
-          ].map((chair, index) => (
-            <div key={index} className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 p-2 bg-gray-100 rounded-lg shadow-lg">
+            { src: "/sec3_chair1.svg", alt: "Chillr chair sketch 1", number: "1" },
+            { src: "/sec3_chair2.svg", alt: "Chillr chair sketch 2", number: "2" },
+            { src: "/sec3_chair3.svg", alt: "Chillr chair sketch 3", number: "3" },
+          ].map((chair) => (
+            <div key={chair.number} className="relative w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 p-4 bg-slate-50 rounded-xl shadow-lg">
+              <span className="absolute top-2 left-2 text-xs sm:text-sm font-semibold text-black bg-white/50 backdrop-blur-sm px-1.5 py-0.5 rounded">
+                {chair.number}
+              </span>
               <Image
                 src={chair.src}
                 alt={chair.alt}
                 layout="fill"
                 objectFit="contain"
-                className="filter invert p-2"
+                className="p-2"
               />
             </div>
           ))}
