@@ -48,20 +48,22 @@ export default function Home() {
         </div>
       </nav>
 
+      <section id="hero_space" className="h-[270vh]"></section>
+
       {/* Hero Section (Spline) */}
-      <section id="hero" className="h-screen w-full relative pt-16 sm:pt-20">
+      <section id="hero" className="fixed inset-x-0 top-0 w-full h-screen pt-16 sm:pt-20">
         <Spline
           scene="https://prod.spline.design/gxqfOuFgM4EqoDxO/scene.splinecode"
           style={{ width: '100%', height: 'calc(100% - 4rem)', position: 'absolute', top: '4rem', left: 0 }}
         />
-        <div className="absolute inset-x-0 top-1/3 flex flex-col items-center justify-center text-center p-4 pointer-events-none">
-          <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-yellow-300 drop-shadow-md">Stop thinking. Just chill.</h1>
-          <p className="text-lg sm:text-xl md:text-2xl text-yellow-300 mt-4 drop-shadow-md">Life is softer than you think.</p>
-        </div>
       </section>
 
+      <div className="z-[1] bg-white">
+        <div className="bg-black rounded-bl-[100px] rounded-br-[100px] w-screen h-20"></div>
+      </div>
       {/* Section 2 (Philosophy Text + Image) */}
-      <section id="about" className="py-12 sm:py-16 px-6 sm:px-8 md:px-16 lg:px-24 grid md:grid-cols-2 gap-10 md:gap-12 items-center bg-white text-black">
+      <section id="about" className="z-[1] pt-16 sm:pt-20 pb-12 sm:pb-16 px-6 sm:px-8 md:px-16 lg:px-24 grid md:grid-cols-2 gap-10 md:gap-12 items-center bg-white text-black">
+        
         <div className="prose prose-lg max-w-[140px] text-gray-700 md:ml-32 text-sm ">
           <p className="leading-[1.2]" dangerouslySetInnerHTML={{ __html: section2Text }} />
         </div>
@@ -80,7 +82,7 @@ export default function Home() {
       </section>
 
       {/* Section 3 (Brand Signage + Chair Sketches) */}
-      <section id="product" className="py-12 sm:py-16 px-6 sm:px-8 md:px-16 lg:px-24 grid md:grid-cols-2 gap-10 md:gap-16 items-start bg-white text-black">
+      <section id="product" className="z-[1] pt-16 sm:pt-20 pb-12 sm:pb-16 px-6 sm:px-8 md:px-16 lg:px-24 grid md:grid-cols-2 gap-10 md:gap-16 items-start bg-white text-black">
         <div className="flex flex-col gap-8 sticky top-24">
           <div className="relative w-full aspect-[16/10] rounded-lg overflow-hidden shadow-xl">
             <Image
@@ -123,7 +125,7 @@ export default function Home() {
       </section>
 
       {/* Section 4 (Spline Embed iframe) */}
-      <section id="interactive" className="h-screen w-full bg-black">
+      <section id="interactive" className="z-[1] h-screen w-full bg-black pt-16 sm:pt-20">
         <div className="w-full h-full">
           <iframe
             src="https://my.spline.design/untitled-0f3EYsjnmYyxNNOZkKQSZZSA-e1z/"
@@ -137,8 +139,8 @@ export default function Home() {
       </section>
 
       {/* Footer (Spline) */}
-      <footer id="contact" className="h-[50vh] min-h-[350px] w-full relative bg-black">
-        <div className="absolute top-8 left-6 sm:left-8 md:left-16 lg:left-24 z-10 pointer-events-none">
+      <footer id="contact" className="z-[1] h-[50vh] min-h-[350px] w-full relative bg-black pt-16 sm:pt-20">
+        <div className="absolute top-24 sm:top-28 left-6 sm:left-8 md:left-16 lg:left-24 z-10 pointer-events-none">
           <p className="text-lg sm:text-xl text-yellow-300 max-w-xs leading-relaxed">{footerTopLeftText}</p>
         </div>
         <Spline
