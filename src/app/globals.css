@@ -1,3 +1,9 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@tailwind base;
+
 @import "tailwindcss";
 
 :root {
